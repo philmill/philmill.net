@@ -10,4 +10,11 @@ require 'nesta/env'
 Nesta::Env.root = ::File.expand_path('.', ::File.dirname(__FILE__))
 
 require 'nesta/app'
+
+require "#{Nesta::App.root}/lib/site_bucket"
+as3_conf_path = File.expand_path('config/as3.yml', Nesta::App.root)
+as3_conf=YAML::load(ERB.new(IO.read(as3_conf_path)).result)
+SiteBucket.current_bucket = as3_conf['bucket']
+SiteBucket.establish_connection!(access_key_id: as3_conf['access_key_id'], secret_access_key: as3_conf['secret_access_key'])
+
 run Nesta::App

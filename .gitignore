@@ -4,3 +4,5 @@
 .DS_Store
 .sass-cache
 .rvmrc
+.idea/
+config/as3.yml
