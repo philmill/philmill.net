@@ -3,6 +3,21 @@ require 'bundler/setup'
 
 Bundler.require(:default)
 
+# Compile Sass on the fly with the Sass plugin.
+require 'sass'
+require 'sass/plugin/rack'
+
+# The project root directory
+root = ::File.dirname(__FILE__)
+
+Compass.add_project_configuration(root + '/config/compass.config')
+Compass.configure_sass_plugin!
+
+use Sass::Plugin::Rack  # Sass Middleware
+
+# Nice looking 404s and other messages
+use Rack::ShowStatus
+
 use Rack::ConditionalGet
 use Rack::ETag
 
