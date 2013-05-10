@@ -6,3 +6,5 @@
 .rvmrc
 .idea/
 config/as3.yml
+log/
+tmp/
