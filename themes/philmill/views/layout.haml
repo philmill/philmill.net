@@ -7,7 +7,7 @@
     - if @keywords
       %meta(name="keywords" content=@keywords)
     %title= @title
-    //%link(href="#{path_to('/css/master.css')}" media="screen" rel="stylesheet")
+    %link(rel="shortcut icon" href="/philmill/images/philmill-van.ico" type="image/x-icon")
     %link{ :href => url("/#{Nesta::Config.theme}/css/master.css"), :media => "screen", :rel => "stylesheet"}
     - local_stylesheet_link_tag('local')
     %link(href="#{path_to('/articles.xml')}" rel="alternate" type="application/atom+xml")
