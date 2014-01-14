@@ -7,7 +7,7 @@ set :rvm_ruby_string, 'ruby-2.0.0-p247'
 set :rvm_type, :user
 
 # set bundle executible to the global gemset
-set :bundle_cmd, '/home/philmill/.rvm/gems/ruby-2.0.0-p0@global/bin/bundle'
+set :bundle_cmd, '/home/philmill/.rvm/gems/ruby-2.0.0-p247@global/bin/bundle'
 # set bundle deployment location to a common directory for sharing gems between projects
 # this also allows us to use thin as an OS service (rvm wrapper points here) as well as start and stop individual projects as needed
 set :bundle_dir, '/home/philmill/.shared_bundle'
