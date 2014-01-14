@@ -3,7 +3,7 @@ require 'bundler/capistrano'
 require 'capistrano/ext/multistage'
 
 # tell rvm which ruby to run
-set :rvm_ruby_string, 'ruby-2.0.0-p0'
+set :rvm_ruby_string, 'ruby-2.0.0-p247'
 set :rvm_type, :user
 
 # set bundle executible to the global gemset
