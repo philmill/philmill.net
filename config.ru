@@ -3,6 +3,9 @@ require 'bundler/setup'
 
 Bundler.require(:default)
 
+require 'astro/moon'
+# Astro::Moon.phase.phase * 100
+
 require 'sass/plugin/rack'
 Compass.add_project_configuration('config/compass.config')
 Compass.configure_sass_plugin!
@@ -23,10 +26,8 @@ Nesta::Env.root = ::File.expand_path('.', ::File.dirname(__FILE__))
 
 require 'nesta/app'
 
-require "#{Nesta::App.root}/lib/site_bucket"
-as3_conf_path = File.expand_path('config/as3.yml', Nesta::App.root)
-as3_conf=YAML::load(ERB.new(IO.read(as3_conf_path)).result)
-SiteBucket.current_bucket = as3_conf['bucket']
-#SiteBucket.establish_connection!(access_key_id: as3_conf['access_key_id'], secret_access_key: as3_conf['secret_access_key'])
+require "#{Nesta::App.root}/lib/dropbox_helpers"
+DropboxHelpers.setup
+require "#{Nesta::App.root}/lib/sass_functions"
 
 run Nesta::App

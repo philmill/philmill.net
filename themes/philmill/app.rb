@@ -11,6 +11,16 @@ module Nesta
       sass(params[:sheet].to_sym, Compass.sass_engine_options)
     end
 
+    # define helper methods for view templates
+    helpers do
+      # define wrappers for DropboxHelpers
+      def dropbox_img(path, id_class='')
+        capture_haml do
+          haml_tag('img'+id_class, src: DropboxHelpers.media(path))
+        end
+      end
+    end
+
     # don't worry about nice looking rendered html in production which is faster to process
     configure :production do
       set :haml, { :ugly => true }

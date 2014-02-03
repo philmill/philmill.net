@@ -58,7 +58,7 @@ namespace :deploy do
   end
 
   task :link, roles: :app do
-    run "ln -nfs #{shared_path}/config/as3.yml #{release_path}/config/as3.yml"
+    run "ln -nfs #{shared_path}/config/dropbox.yml #{release_path}/config/dropbox.yml"
   end
 end
 

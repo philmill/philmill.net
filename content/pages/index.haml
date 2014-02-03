@@ -2,5 +2,6 @@ Template: home
 Keywords: music, blog, photos, philmill
 Description: the blog and experimental website for the workings of philmill
 
-%section.articles= article_summaries(latest_articles)
-
+%section.articles
+  = article_summaries(latest_articles)
+  // = dropbox_img('article_images/happy-bouncing-dog.jpg', '#foo.bar')
