@@ -18,4 +18,4 @@ To Shadow (a dog) she is dog, but to me she is a beautiful expression of genes w
 expression of a god or natural selection (a work of art). The 'purity' of this dog's existance can only be experienced
 by high level conscience beings who can extract references in relation to past experiences.
 
-
+This is an example of a blog post.

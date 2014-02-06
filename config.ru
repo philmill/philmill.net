@@ -24,9 +24,9 @@ use Rack::ETag
 require 'nesta/env'
 Nesta::Env.root = ::File.expand_path('.', ::File.dirname(__FILE__))
 
-require 'nesta/app'
+Dir["#{Nesta::Env.root}/lib/*.rb"].each {|f| require f}
+DropboxSingleton.setup
 
-require "#{Nesta::App.root}/lib/dropbox_helpers"
-DropboxHelpers.setup
+require 'nesta/app'
 
 run Nesta::App
