@@ -28,6 +28,5 @@ require 'nesta/app'
 
 require "#{Nesta::App.root}/lib/dropbox_helpers"
 DropboxHelpers.setup
-require "#{Nesta::App.root}/lib/sass_functions"
 
 run Nesta::App

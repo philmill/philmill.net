@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!!! 5
 %html(lang="en")
   %head
     %meta(charset="utf-8")
@@ -10,6 +10,7 @@
     %link(rel="shortcut icon" href="/philmill/images/philmill-van.ico" type="image/x-icon")
     %link{ :href => url("/#{Nesta::Config.theme}/css/master.css"), :media => "screen", :rel => "stylesheet"}
     %link(href="#{path_to('/articles.xml')}" rel="alternate" type="application/atom+xml")
+    %script(type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js")
     %script(type="text/javascript" src="#{Nesta::Config.theme}/javascripts/application.js")
     = haml :analytics, :layout => false
   %body
