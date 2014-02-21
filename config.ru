@@ -9,7 +9,6 @@ require 'astro/moon'
 require 'sass/plugin/rack'
 Compass.add_project_configuration('config/compass.config')
 Compass.configure_sass_plugin!
-require 'zen-grids'
 
 Sass::Plugin.options[:style] = :compressed
 use Sass::Plugin::Rack  # Sass Middleware

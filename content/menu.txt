@@ -1,0 +1,6 @@
+/
+blog
+articles
+photos
+sounds
+hikes

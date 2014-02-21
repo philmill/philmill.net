@@ -1,12 +1,16 @@
-%section.links
-  %a.btn.grey{href:"https://soundcloud.com/philmill"} SoundCloud
-  %a.btn.grey{href:"https://coderwall.com/philmill"} CoderWall
-  %a.btn.grey{href:"http://www.linkedin.com/pub/phillip-miller/86/7ab/a27/"} LinkedIn
-  %a.btn.grey{href:"https://github.com/philmill"} Github
+%header(role="banner")
 
-%section.intro
-  %heading
+  // should be smaller text and get it out of this container, and position it absolute to this container or really just the subtitle
+  %hgroup.intro
     %h3
-      %a(href="/")philmill
-      is Phillip R Miller II
-    %h6 Music Words Experiments Photos Code
+      %a(href="/")= @heading
+    //#subtitle= @subtitle
+
+  %nav.primary
+    - display_menu(@menu_items, class: "menu", levels: 1)
+
+  %nav.links
+    %a.btn.grey{href:"https://soundcloud.com/philmill"} SoundCloud
+    %a.btn.grey{href:"https://coderwall.com/philmill"} CoderWall
+    %a.btn.grey{href:"http://www.linkedin.com/pub/phillip-miller/86/7ab/a27/"} LinkedIn
+    %a.btn.grey{href:"https://github.com/philmill"} Github

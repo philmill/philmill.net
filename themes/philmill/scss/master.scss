@@ -1,8 +1,31 @@
-@charset 'UTF-8';
-@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:700);
-@import 'zen';
-@import 'zen/background';
-$zen-gutter-width: 40px;
-$zen-column-count: 9;
+/* BEM Naming
+  .block {}
+  .block__element {}
+  .block--modifier {}
 
+  section tags should have a header and contain visible content
+  div tags are for styling purposes or as a convenience for scripting
+*/
+
+@charset 'UTF-8';
+
+// Fonts
+//@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+//@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:700);
+
+// Grid
+@import 'susy';
+$total-columns:  12;
+$column-width: 60px;
+$gutter-width: 20px;
+$grid-padding: 10px;
+$container-style: fluid;
+
+// Compass
+@import "compass/css3/border-radius";
+@import "compass/css3/images";
+@import 'compass/typography/lists/horizontal-list';
+
+// Styles
 @import 'base';

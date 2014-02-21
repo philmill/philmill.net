@@ -1,1 +1,13 @@
-~ @page.to_html(self)
+#sidedump
+  = @subtitle
+
+#content.home(role="main")
+  ~ @page.to_html(self)
+
+#sidebar.home
+  %nav
+    %a.current(href="#blog")
+    %a(href="#articles")
+    %a(href="#photos")
+    %a(href="#sounds")
+    %a(href="#hikes")
