@@ -8,20 +8,11 @@
       %meta(name="keywords" content=@keywords)
     %title= @title
 
-    %link(rel="shortcut icon" href="/philmill/images/philmill-van.ico" type="image/x-icon")
+    %link(rel="shortcut icon" href="#{image_path('philmill-van.ico')}" type="image/x-icon")
     %link(href="#{path_to('/articles.xml')}" rel="alternate" type="application/atom+xml")
 
-    %link(href="http://necolas.github.io/normalize.css/3.0.0/normalize.css" media="screen" rel="stylesheet")
-    %link{ :href => url("/#{Nesta::Config.theme}/css/master.css"), :media => "screen", :rel => "stylesheet"}
-
-    %script(type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js")
-
-    %script(type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.11.4/TweenLite.min.js")
-    %script(type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.11.4/TimelineLite.min.js")
-    %script(type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.11.4/plugins/CSSPlugin.min.js")
-    //%script(type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.11.4/plugins/ScrollToPlugin.min.js")
-
-    %script(type="text/javascript" src="#{Nesta::Config.theme}/javascripts/application.js")
+    = stylesheet_tag 'app'
+    = javascript_tag 'app'
 
     - if root_index?
       :javascript

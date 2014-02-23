@@ -9,4 +9,4 @@ config/as3.yml
 config/dropbox.yml
 log/
 tmp/
-master.css
+public/assets/
