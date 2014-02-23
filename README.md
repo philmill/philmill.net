@@ -1,4 +1,4 @@
-## My personal site using [Nesta CMS](https://github.com/gma/nesta) with added Amazon S3 buckets and Compass support.
-Thanks to Brian Gonzalez for setting up a [Nesta Boilerplate](https://github.com/briangonzalez/nesta-boilerplate) which my Compass support is based on.  
+## My personal site using [Nesta CMS](https://github.com/philmill/nesta) with Dropbox folders, Sprockets, and Compass support.
+You can find articles, music, photos, and general blog entries.
 
 
