@@ -1,5 +1,5 @@
 Title: Testing Summary
-Summary: This is a summary
+Summary: This is an example summary and not a real post.
 Date: 6 Feb 2014
 
 # Sammy L. Jackson

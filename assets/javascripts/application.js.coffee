@@ -33,13 +33,21 @@
     this.addClass 'page-preview--current'
 
 @PhilMill.City =
-  # TODO: load image onto canvas tag and transform the canvas or need an on load to handle image load
   init: ->
     bg = $('#city-footer')
-    maxX = bg.width()/2
+    maxX = bg.width()
+    maxY = bg.height()
     test_url = bg.data('img-url')
 
     i = 10
     while i -= 1
-      building = $("<img src="+test_url+"/>").appendTo(bg)
-      TweenLite.set(building, {scale:Math.random()-0.3, left:maxX*Math.random()})
+      div = $("<div></div>").appendTo(bg)
+      $("<img src="+test_url+"/>").appendTo(div).on 'load', ->
+        w = $(this).width()
+        h = $(this).height()
+        r = 0.7*Math.random()
+        #$(this).css {width:w/3, height:h/3, left:maxX*Math.random()}
+        TweenLite.set($(this), {scale: r, x:maxX*Math.random(), y:maxY*r})
+        c = $(this).clone().appendTo($(this).parent())
+        TweenLite.to(c, 1.5, {y:-50, ease:Power3.easeOut, delay:2*r})
+

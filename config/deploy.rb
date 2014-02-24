@@ -22,9 +22,6 @@ set :application, 'philmill'
 set :user, 'philmill'
 set :group, 'philmill'
 
-# no assets here
-set :normalize_asset_timestamps, false
-
 # set git as repo type and use cache to speed up deployments
 set :scm, :git
 set :deploy_via, :remote_cache

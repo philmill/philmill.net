@@ -2,7 +2,7 @@ Title: Evolutionary Art
 Categories: art
 Keywords: art, evolution, perspective, blog
 Description: small blog post about the nature of art as human
-Summary: Is art an evolutionary trait developed post communication as the *self* progressed? More about art shit.
+Summary: Is art an evolutionary trait developed post communication as the *self* progressed? This is an attempt to post a blog entry and not intended to be real content.
 Date: 27 Oct 2013
 
 # What is Art?

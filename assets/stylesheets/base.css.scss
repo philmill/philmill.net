@@ -103,6 +103,9 @@ nav.primary {
   position: absolute;
   top: 555px;
   height: 485px;
+  ul li {
+    list-style: none;
+  }
 }
 
 .page-preview--current {
@@ -115,6 +118,9 @@ nav.primary {
   border-top: 1px solid lighten(#ECBE00, 20%);
   #{headings()} {
     color: #ECBE00;
+  }
+  >ul {
+    margin-top: 17px;
   }
 }
 
@@ -148,6 +154,10 @@ nav.primary {
     color: #ada392;
     &:hover { color: #797772; }
   }
+}
+
+img.drop-test {
+  width: 50%;
 }
 
 #sounds {
@@ -215,7 +225,10 @@ nav.primary {
   bottom: 0px;
   z-index: -10;
   clear: both;
-  >img {position:absolute;}
+  >div {
+    position: relative;
+    >img {position: absolute;}
+  }
 }
 
 
