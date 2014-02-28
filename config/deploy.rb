@@ -25,9 +25,12 @@ set :branch, 'master'
 set :use_sudo, false
 set :ssh_options, { :forward_agent => true }
 
-set :copy_exclude, %w(.git/ assets/ themes/philmill/src)
+set :copy_exclude, %w(.git/ themes/philmill/src)
 
 set :keep_releases, 3
+
+# create binstubs to wrap unicorn
+set :bundle_flags, "--binstubs --deployment --quiet"
 
 namespace :deploy do
 
