@@ -35,15 +35,15 @@ set :bundle_flags, "--binstubs --deployment --quiet"
 namespace :deploy do
 
   task :start, :roles => [:app, :web] do
-    run "service unicorn-pm start"
+    run "bash #{shared_path}/config/unicorn_init.sh start"
   end
 
   task :stop, :roles => [:app, :web] do
-    run "service unicorn-pm stop"
+    run "bash #{shared_path}/config/unicorn_init.sh stop"
   end
 
   task :restart, :roles => [:app, :web] do
-    run "service unicorn-pm restart"
+    run "bash #{shared_path}/config/unicorn_init.sh restart"
   end
 
   task :cold do
