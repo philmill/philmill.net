@@ -13,7 +13,7 @@ module Nesta
   class App
     helpers ::SinatraHelpers
 
-    # Register the AssetPipeline extention, this goes after all customization
+    # Register the AssetPipeline extension, this goes after all customization
     register Sinatra::AssetPipeline
 
     configure :production do
