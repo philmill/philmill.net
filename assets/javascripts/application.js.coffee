@@ -42,7 +42,7 @@
     i = 10
     while i -= 1
       div = $("<div></div>").appendTo(bg)
-      $("<img src="+test_url+"/>").css({display:'none'}).appendTo(div).on 'load', ->
+      $("<img src='#{test_url}' alt='Building Image'/>").css({display:'none'}).appendTo(div).on 'load', ->
         w = $(this).width()
         h = $(this).height()
         r = 0.7*Math.random()
