@@ -19,7 +19,7 @@
       ns.updateNav(config, newSection)
       false
 
-  # find current link, remove the current label class and apply to new section
+# find current link, remove the current label class and apply to new section
   updateNav: (config, newSection)->
     config.navLinks.eq(config.currentLink).removeClass 'current'
     config.currentLink = newSection.index 'section.page-preview'
@@ -34,20 +34,20 @@
 
 @PhilMill.City =
   init: ->
-    bg = $('#city-footer')
-    maxX = bg.width()
-    maxY = bg.height()
-    test_url = bg.data('img-url')
+    $bg = $('#city-footer')
+    maxX = $bg.width()
+    maxY = $bg.height()
+    test_url = $bg.data('img-url')
 
     i = 10
     while i -= 1
-      div = $("<div></div>").appendTo(bg)
-      $("<img src="+test_url+"/>").css({display:'none'}).appendTo(div).on 'load', ->
+      $container = $("<div></div>").appendTo($bg)
+      $("<img src='#{test_url}' alt='Building Image'/>").css({display:'none'}).appendTo($container).on 'load', ->
         w = $(this).width()
         h = $(this).height()
         r = 0.7*Math.random()
         #$(this).css {width:w/3, height:h/3, left:maxX*Math.random()}
         TweenLite.set($(this), {display:'inline', scale: r, x:maxX*Math.random(), y:maxY*r})
-        c = $(this).clone().appendTo($(this).parent())
-        TweenLite.to(c, 1.5, {y:-50, ease:Power3.easeOut, delay:2*r})
+        $imageClone = $(this).clone().appendTo($(this).parent())
+        TweenLite.to($imageClone, 1.5, {y:-50, ease:Power3.easeOut, delay:2*r})
 
