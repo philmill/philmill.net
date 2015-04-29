@@ -1,4 +1,5 @@
 source 'http://rubygems.org'
+ruby '2.1.6'
 
 gem 'nesta', git: 'git://github.com/philmill/nesta.git'
 
