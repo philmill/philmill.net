@@ -14,7 +14,7 @@ gem 'susy', '~>1.0'
 
 group :development do
   gem 'mr-sparkle', '~>0.3.0'
-  gem 'capistrano', '~>2.15.5', require: false
+  gem 'capistrano', '~>2.15.5'
 end
 
 group :production do
