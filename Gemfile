@@ -1,4 +1,5 @@
 source 'http://rubygems.org'
+ruby '2.1.6'
 
 gem 'nesta', git: 'git://github.com/philmill/nesta.git'
 gem 'unicorn', '~>4.8'
@@ -14,5 +15,5 @@ gem 'susy', '~>1.0'
 
 group :development do
   gem 'mr-sparkle', '~>0.3.0'
-  gem 'capistrano', '~>2.15.5', require: false
+  gem 'capistrano', '~>2.15.5'
 end
