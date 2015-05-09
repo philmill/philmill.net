@@ -1,59 +1,27 @@
-require 'rvm/capistrano'
-require 'bundler/capistrano'
-require 'capistrano/ext/multistage'
+# config valid only for current version of Capistrano
+lock '3.4.0'
 
-# tell rvm which ruby to run
-set :rvm_ruby_string, 'ruby-2.1.1@philmill'
-set :rvm_type, :user
-
-set :stages, %w(staging production)
-set :default_stage, 'production'
-
-# will be used to set the location of files to be served
 set :application, 'philmill'
+set :repo_url, 'git@github.com:philmill/philmill.net.git'
 
-# This is the user capistrano will use for SSH, and thus, who will own the files it deploys
-set :user, 'philmill'
-set :group, 'philmill'
+set :rbenv_type, :user
+set :rbenv_ruby, File.read('.ruby-version').strip
 
-# set git as repo type and use cache to speed up deployments
-set :scm, :git
-set :deploy_via, :remote_cache
-set :repository,  'git@github.com:philmill/philmill.net.git'
-set :branch, 'master'
+set :linked_files, fetch(:linked_files, []).push('config/as3.yml', 'config/dropbox.yml')
 
-set :use_sudo, false
-set :ssh_options, { :forward_agent => true }
+# Default value for keep_releases is 5
+set :keep_releases, 3
 
 set :copy_exclude, %w(.git/ themes/philmill/src)
 
-set :keep_releases, 3
-
-# create binstubs to wrap unicorn
-set :bundle_flags, "--binstubs --deployment --quiet"
+after 'deploy:published', 'deploy:restart'
 
 namespace :deploy do
-
-  task :start, :roles => [:app, :web] do
-    run "bash #{shared_path}/config/unicorn_init.sh start"
-  end
-
-  task :stop, :roles => [:app, :web] do
-    run "bash #{shared_path}/config/unicorn_init.sh stop"
-  end
-
-  task :restart, :roles => [:app, :web] do
-    run "bash #{shared_path}/config/unicorn_init.sh restart"
-  end
-
-  task :cold do
-    deploy.update
-  end
-
-  task :link, roles: :app do
-    run "ln -nfs #{shared_path}/config/dropbox.yml #{release_path}/config/dropbox.yml"
-  end
+	after :restart, :clear_cache do
+		on roles(:web), in: :groups, limit: 3, wait: 10 do
+			within release_path do
+				execute :bundle, :exec, 'rake assets:clean'
+			end
+		end
+	end
 end
-
-before 'deploy:assets:precompile', 'deploy:link'
-after 'deploy:restart', 'deploy:cleanup'
