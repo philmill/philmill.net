@@ -5,4 +5,5 @@
       %a{href: "http://nestacms.com"} Nesta
 
 - if root_index?
-  #city-footer{data: {img_url: image_path('city/building01.png')}}
+  - dropbox_image_urls_for('assets/city').each do |url|
+    .city-footer{data: {img_url: url}}

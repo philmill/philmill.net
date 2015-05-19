@@ -15,9 +15,10 @@
     = javascript_tag 'app'
 
     - if root_index?
-      :javascript
-        $(PhilMill.PagePreviewNav.init);
-        $(PhilMill.City.init);
+      :coffee
+        $ ->
+          PhilMill.PagePreviewNav.init()
+          PhilMill.City.init()
 
     = haml :analytics, :layout => false
   %body
