@@ -1,3 +1,4 @@
+require 'rack'
 require 'rubygems'
 require 'bundler/setup'
 
