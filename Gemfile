@@ -1,8 +1,7 @@
 source 'http://rubygems.org'
 ruby '2.1.6'
 
-gem 'nesta', git: 'git://github.com/philmill/nesta.git'
-gem 'unicorn', '~>4.8'
+gem 'nesta', github: 'philmill/nesta'
 
 gem 'redcarpet', '~>3.0'
 gem 'dropbox-sdk', '~>1.6.3'
@@ -14,6 +13,13 @@ gem 'susy', '~>1.0'
 #gem 'oj', '~>2.5'
 
 group :development do
-  gem 'mr-sparkle', '~>0.3.0'
-  gem 'capistrano', '~>2.15.5'
+	gem 'mr-sparkle', '~>0.3.0'
+	gem 'capistrano', '~>3.0'
+	gem 'capistrano-bundler', '~> 1.1'
+	gem 'capistrano-rbenv', '~> 2.0'
+	gem 'capistrano-rails', '~> 1.1'
+end
+
+group :production do
+	gem 'unicorn', '~>4.8'
 end
