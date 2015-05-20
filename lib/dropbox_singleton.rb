@@ -21,16 +21,16 @@ module DropboxSingleton
 	end
 
 	def media(path)
-		@client.media("#{@root_path}/#{path}")['url']
+		client.media("#{@root_path}/#{path}")['url']
 	end
 
 
 	private
 
 	def urls_for(type, path)
-		@client.metadata("#{@root_path}/#{path}")['contents'].map do |item|
+		client.metadata("#{@root_path}/#{path}")['contents'].map do |item|
 			next unless item['mime_type'].split('/').first == type
-			@client.media(item['path'])['url']
+			client.media(item['path'])['url']
 		end
 	end
 end
